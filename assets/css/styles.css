@@ -6,24 +6,23 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  --hue: 14;
-  --first-color: hsl(var(--hue), 91%, 54%);
-  --first-color-alt: hsl(var(--hue), 91%, 50%);
-  --title-color: hsl(var(--hue), 4%, 100%);
-  --text-color: hsl(var(--hue), 4%, 85%);
-  --text-color-light: hsl(var(--hue), 4%, 55%);
+  --hue: 230;
+  --first-color: hsl(var(--hue), 69%, 61%); 
+  --first-color-alt: hsl(var(--hue), 57%, 53%);
+  --title-color: hsl(var(--hue), 8%, 15%);
+  --text-color: hsl(var(--hue), 8%, 45%);
+  --text-color-light: hsl(var(--hue), 8%, 65%);
+  --container-color: hsl(var(--hue), 60%, 97%);
+  --button-text-color: hsl(var(--hue), 8%, 99%);
+  --body-color: hsl(var(--hue), 60%, 95%);
 
   /*Green gradient*/
-  --body-color: linear-gradient(90deg, hsl(293, 28%, 40%) 0%, hsl(243, 28%, 40%) 100%);
-  --container-color: linear-gradient(136deg, hsl(293, 28%, 35%) 0%, hsl(243, 28%, 35%) 100%);
+ /* --body-color: linear-gradient(90deg, hsl(293, 28%, 40%) 0%, hsl(243, 28%, 40%) 100%);
+  --container-color: linear-gradient(136deg, hsl(293, 28%, 35%) 0%, hsl(243, 28%, 35%) 100%);*/
 
   /*Red gradient*/
   /*--body-color: linear-gradient(90deg, hsl(360, 28%, 40%) 0%, hsl(18, 28%, 40%) 100%);
   --container-color: linear-gradient(136deg, hsl(360, 28%, 35%) 0%, hsl(18, 28%, 35%) 100%);*/
-
-  /*Black solid*/
-  /*--body-color: hsl(30, 8%, 8%);
-  --container-color: hsl(30, 8%, 8%); */
 
    /*Blue gradient*/
    /*--body-color: linear-gradient(90deg, hsl(248, 59%, 15%) 0%, hsl(236, 28%, 40%) 100%);
@@ -74,6 +73,23 @@
   }
 }
 
+/*=============== Ночной режим ===============*/
+.nav__btns {
+  display: flex;
+}
+
+.change-theme {
+  font-size: 1.25rem;
+  margin-right: var(--mb-1);
+  cursor: pointer;
+}
+
+body.dark-theme {
+  --title-color: hsl(var(--hue), 8%, 95%);
+  --text-color: hsl(var(--hue), 8%, 75%);
+  --container-color: hsl(var(--hue), 28%, 12%);
+  --body-color: hsl(var(--hue), 29%, 16%);
+}
 /*=============== BASE ===============*/
 *{
   box-sizing: border-box;
@@ -181,7 +197,8 @@ button{
 .nav__link,
 .nav__logo,
 .nav__toggle,
-.nav__close {
+.nav__close,
+.change-theme {
   color: var(--title-color);
 }
 
@@ -374,7 +391,7 @@ button{
 .button {
   display: inline-flex;
   background-color: var(--first-color);
-  color: var(--title-color);
+  color: var(--button-text-color);
   padding: .5rem 1rem;
   border-radius: .5rem;
   font-weight: var(--font-medium);
@@ -394,6 +411,7 @@ button{
   border: 2px solid;background-color: transparent;
   border-radius: 3rem;
   padding: .75rem 1.5rem;
+  color: var(--title-color);
 }
 
 .button--ghost:hover {
@@ -495,7 +513,7 @@ button{
 
 .trick__icon {                            /*иконка корзины*/
   font-size: 1.25rem;
-  color: var(--title-color);
+  color: var(--button-text-color);
 }
 
 .trick__content:hover .trick__img {
@@ -504,6 +522,11 @@ button{
 
 .trick__content:hover .trick__button {
   right: 0;
+}
+
+.trick__img {
+  width: 130px;
+  height: 130px;
 }
 
 /*=============== NEW ARRIVALS ===============*/
@@ -519,7 +542,7 @@ button{
   bottom: 0;
   right: 0;
   padding-bottom: 3rem;
-  width: 180px;
+  width: 170px;
   transition: .3s;
 }
 
@@ -539,7 +562,7 @@ button{
   top: 8%;
   left: 8%;
   background: var(--first-color);
-  color: var(--title-color);
+  color: var(--button-text-color);
   font-size: var(--small-font-size);
   padding: .25rem .5rem;
   border-radius: .25rem;
@@ -789,7 +812,7 @@ button{
   }
 
   .footer__content {
-    margin-bottom: var(--mb-1);
+    margin-bottom: var(--mb-1-5);
   }
 
   .newsletter__form {
@@ -806,6 +829,9 @@ button{
 }
 
 @media screen and (min-width: 321px){
+  .footer__content {
+    margin-bottom: var(--mb-1-5);
+  }
 
   }
 
@@ -846,7 +872,7 @@ button{
     padding-bottom: 3rem;
   }
 
-    .footer__content {
+  .footer__content {
     margin-bottom: var(--mb-1);
   }
 }
@@ -1014,11 +1040,6 @@ button{
     gap: 3.5rem;
   }
 
-  .trick__img {
-    width: 130px;
-    height: 130px;
-  }
-
   .trick__title {
     font-size: var(--h3-font-size);
   }
@@ -1029,9 +1050,7 @@ button{
     padding: 2rem 0;
   }
 
-  .new__img {
-    width: 180px;
-  }
+
 
   .new__img,
   .new__subtitle {
