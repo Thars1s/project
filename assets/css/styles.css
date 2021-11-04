@@ -652,7 +652,12 @@ button{
 /*=============== FOOTER ===============*/
 .footer {
   position: relative;
-  overflow: hidden;
+  background: #3586ff;
+  margin-top: 100px;
+  --title-color: hsl(var(--hue), 8%, 95%);
+  --text-color: hsl(var(--hue), 8%, 75%);
+  --container-color: hsl(var(--hue), 28%, 12%);
+  --body-color: hsl(var(--hue), 29%, 16%);
 }
 
 .footer__img-one,
@@ -696,7 +701,8 @@ button{
 }
 
 .footer__description {
-  margin-bottom: var(--mb-2-5);
+  margin-bottom: var(--mb-1);
+  color: var(--title-color);
 }
 
 .footer__social {
@@ -710,11 +716,12 @@ button{
   padding: .25rem;
   border-radius: .25rem;
   color: var(--title-color);
-  font-size: 1rem;
+  font-size: 2rem;
+  transition: .6s;
 }
 
 .footer__social-link:hover {
-  background: var(--body-color);
+  transform: translateY(-.5rem);
 }
 
 .footer__title {
@@ -742,6 +749,65 @@ button{
   text-align: center;
   font-size: var(--small-font-size);
   margin-top: 4.5rem;
+  padding-bottom: 32px;
+  color: var(--title-color);
+}
+
+.footer .wave {
+  z-index: 1000;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-size: 1000px 100px;
+  background-image: url(/assets/img/wave.png);
+}
+
+.footer .wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWave 4s linear infinite;
+}
+
+.footer .wave#wave2 {
+  z-index: 999;
+  opacity: .5;
+  bottom: 10px;
+  animation: animateWave_02 4s linear infinite;
+}
+
+.footer .wave#wave3 {
+  z-index: 1000;
+  opacity: .2;
+  bottom: 15px;
+  animation: animateWave 3s linear infinite;
+}
+
+.footer .wave#wave4 {
+  z-index: 999;
+  opacity: .7;
+  bottom: 20px;
+  animation: animateWave_02 3s linear infinite;
+}
+
+@keyframes animateWave {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+
+@keyframes animateWave_02 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
 }
 /*=============== SCROLL UP ==(Настройка кнопки вверх с фиксированным положением)=============*/
 .scrollup {
