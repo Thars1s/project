@@ -761,7 +761,7 @@ button{
   width: 100%;
   height: 100px;
   background-size: 1000px 100px;
-  background-image: url(wave.png);
+  background: url(wave.png);
 }
 
 .footer .wave#wave1 {
