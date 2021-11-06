@@ -53,9 +53,6 @@
                 
                 
                 <div class="nav__btns">
-                    <!-- Кнопка ночного режима-->
-                    <i class='bx bx-moon change-theme' id="theme-button"></i>
-                    
                     <div class="nav__toggle" id="nav-toggle">
                         <i class='bx bx-grid-alt'></i>
                     </div>
@@ -65,7 +62,15 @@
 
         <main class="main">
             <!--==================== HOME ====================-->
-            <section class="home container" id="home">
+            <div class="night" id="night">
+                <img src="assets/img/stars.png" alt="" id="stars">
+                <img src="assets/img/moon.png" alt="" id="moon">
+                <img src="assets/img/mountains_behind.png" alt="" id="mountains_behind">
+                <h2 class="text_fly" id="text_fly">Dead-чат</h2>
+                <img src="assets/img/mountains_front.png" alt="" id="mountains_front">
+            </div>
+
+            <section class="home-container" id="home">
                 <div class="swiper home-swiper">
                     <div class="swiper-wrapper">
                         <section class="swiper-slide">
@@ -209,7 +214,7 @@
             </section>
             
             <!--==================== CATEGORY ====================-->
-            <section class="section category">
+            <section class="section category" id="tr">
                 <h2 class="section__title">Наши любимые <br> Игры</h2>
 
                 <div class="category__container container grid">
@@ -514,7 +519,7 @@
             </section>
 
             <!--==================== OUR NEWSLETTER ====================-->
-            <section class="section newsletter">
+            <section class="section newsletter" id="newsletter">
                 <div class="newsletter__container container">
                     <h2 class="section__title">Наша Рассылка</h2>
                     <p class="newsletter__description">Новые игры, мероприятия, скидки. Прямиком на твой ящик.</p>
