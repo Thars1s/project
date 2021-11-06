@@ -9,12 +9,12 @@
   --hue: 230;
   --first-color: hsl(var(--hue), 69%, 61%); 
   --first-color-alt: hsl(var(--hue), 57%, 53%);
-  --title-color: hsl(var(--hue), 8%, 15%);
-  --text-color: hsl(var(--hue), 8%, 45%);
+  --title-color: hsl(var(--hue), 8%, 95%);
+  --text-color: hsl(var(--hue), 8%, 75%);
   --text-color-light: hsl(var(--hue), 8%, 65%);
-  --container-color: hsl(var(--hue), 60%, 97%);
+  --container-color: hsl(var(--hue), 28%, 12%);
   --button-text-color: hsl(var(--hue), 8%, 99%);
-  --body-color: hsl(var(--hue), 60%, 95%);
+  --body-color: hsl(var(--hue), 29%, 16%);
 
   /*Green gradient*/
  /* --body-color: linear-gradient(90deg, hsl(293, 28%, 40%) 0%, hsl(243, 28%, 40%) 100%);
@@ -78,18 +78,6 @@
   display: flex;
 }
 
-.change-theme {
-  font-size: 1.25rem;
-  margin-right: var(--mb-1);
-  cursor: pointer;
-}
-
-body.dark-theme {
-  --title-color: hsl(var(--hue), 8%, 95%);
-  --text-color: hsl(var(--hue), 8%, 75%);
-  --container-color: hsl(var(--hue), 28%, 12%);
-  --body-color: hsl(var(--hue), 29%, 16%);
-}
 /*=============== BASE ===============*/
 *{
   box-sizing: border-box;
@@ -281,6 +269,63 @@ button{
 }
 
 /*=============== HOME ===============*/
+.night{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.night::before{
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, var(--body-color), transparent);
+  z-index:  var(--z-fixed)
+}
+
+.night img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.night img#moon{
+  mix-blend-mode: screen;
+  overflow: hidden;
+}
+
+.night img#mountains_front{
+  z-index: var(--z-tooltip);
+}
+
+.night img#mountains_behind{
+  overflow: hidden;
+}
+
+#text_fly{
+  position: absolute;
+  right: -350px;
+  letter-spacing: .5rem;
+  white-space: nowrap;
+  font-size: 7vw;
+  z-index: 9;
+  font-weight: 800;
+}
+
+.home-container{
+  position: relative;
+  padding: 100px 24px;
+  background: var(--body-color);
+}
 .home__content {
   row-gap: 1rem;
 }
@@ -429,6 +474,11 @@ button{
 }
 
 /*=============== CATEGORY ===============*/
+#tr {
+  position: relative;
+  background: var(--body-color);
+}
+
 .category__container {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem 2rem;
@@ -452,6 +502,11 @@ button{
   transform: translateY(-.5rem);
 }
 /*=============== ABOUT ===============*/
+#about {
+  position: relative;
+  background: var(--body-color);
+}
+
 .about__container {
   row-gap: 2rem;
 }
@@ -469,7 +524,12 @@ button{
   justify-self: center;
 }
 
-/*=============== TRICK OR TREAT ===============*/
+/*=============== ИГРЫ В КОТОРЫЕ МЫ ИГРАЕМ ===============*/
+#trick {
+  position: relative;
+  background: var(--body-color);
+}
+
 .trick__container {
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
@@ -530,6 +590,11 @@ button{
 }
 
 /*=============== NEW ARRIVALS ===============*/
+#new {
+  position: relative;
+  background: var(--body-color);
+}
+
 .new__container {
   padding-top: 1rem;
 }
@@ -625,6 +690,11 @@ button{
   bottom: 2rem;
 }
 /*=============== NEWSLETTER ===============*/
+#newsletter {
+position: relative;
+background: var(--body-color);
+}
+
 .newsletter__description {
   text-align: center;
   margin-bottom: var(--mb-1-5);
@@ -667,9 +737,10 @@ button{
 }
 
 .footer__img-one {
-  width: 128px;
+  width: 256px;
   top: 6rem;
-  right: -2rem;
+  right: 0;
+  mix-blend-mode: hard-light;
 }
 
 .footer__img-two {
