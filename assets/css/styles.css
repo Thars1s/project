@@ -266,7 +266,6 @@ button{
 /*=============== HOME ===============*/
 .first{
   text-decoration: line-through;
-  text-decoration-thickness: 20%;
   text-decoration-color: red;
 }
 
