@@ -1212,13 +1212,4 @@ footer .wave {
     margin-top: var(--mb-2-5);
   }
 
-  .footer__img-one {
-    width: 128px;
-  }
-
-  .footer__img-two {
-    width: 128px;
-    top: 30%;
-    left: -3%;
-  }
 }
