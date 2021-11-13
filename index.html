@@ -13,8 +13,11 @@
         <!--=============== SWIPER CSS (Копи-паста слайдера с Swiper.com)============--> 
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
-        <!--=============== CSS ===============--> 
+        <!--=============== CSS ===============-->s 
         <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!--=============== Calendar ===============--> 
+        <link rel="stylesheet" href="calendar/dycalendar.css">
 
         <title>Dead-Чат</title>
     </head>
@@ -70,6 +73,71 @@
                 <img src="assets/img/mountains_front.png" alt="" id="mountains_front">
             </div>
 
+            <div class="popup2" id="popup2">                                                 <!--==================== Поп-ап ====================-->
+                <a href="#header" class="popup2__area"></a>
+                <div class="popup2__body">                                                  <!--==================== Тело ====================-->
+                    <div class="popup2__content">                                           <!--==================== Контент ====================-->
+                        <a href="#header" class="popup2__close">X</a>                              <!--==================== Закрывающая кнопка ====================-->
+                        <img src="assets/img/category1-img.png" alt="">
+                        <div class="popup2__title">Cерп</div>
+                        <div class="info">
+                            <div class="popup2__text">Общее количество игр</div>
+                            <div class="wrapper">
+                                <div class="icon facebook">  
+                                    <div class="tooltip">
+                                        12.05.2019 (Руссвет)#1<br>
+                                        02.06.2019 (Тогава)#2<br>
+                                        09.06.2019 (Тогава)#2<br>
+                                        16.06.2019 (Руссвет)#3<br>
+                                        23.06.2019 (Саксония)#1<br>
+                                        30.06.2019 (Поляния)#5<br>
+                                        16.04.2021 (Саксония)#3<br>
+                                        21.05.2021 (Север)#1<br>
+                                        04.06.2021 (Альбион)#4<br>
+                                        23.06.2021 (Крымея)#1<br>
+                                        23.07.2021 (Север)#2<br>
+                                        30.07.2021 (Поляния)#2<br>
+                                        05.11.2021 (Поляния)#2<br>
+                                        12.11.2021 (Север)#1</div>
+                                    <span><i>14</i> (100%)</span>
+                                </div>
+                            </div>
+
+                            <div class="popup2__text">Общее количество побед</div>
+                            <div class="wrapper">
+                                <div class="icon facebook">  
+                                    <div class="tooltip">
+                                        12.05.2019 (Руссвет)#1<br>
+                                        23.06.2019 (Саксония)#1<br>
+                                        21.05.2021 (Север)#1<br>
+                                        23.06.2021 (Крымея)#1<br>
+                                        12.11.2021 (Север)#1
+                                    </div>
+                                    <span><i>5</i> (35,7%)</span>
+                                </div>
+                            </div>
+
+                            <div class="popup2__text">Попаданий в топ-3</div>
+                            <div class="wrapper">
+                                <div class="icon facebook">  
+                                    <div class="tooltip">
+                                        02.06.2019 (Тогава)#2<br>
+                                        09.06.2019 (Тогава)#2<br>
+                                        16.06.2019 (Руссвет)#3<br>
+                                        16.04.2021 (Саксония)#3<br>
+                                        23.07.2021 (Север)#2<br>
+                                        30.07.2021 (Поляния)#2<br>
+                                        05.11.2021 (Поляния)#2
+                                    </div>
+                                    <span><i>7</i> (50.0%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
+
             <section class="home-container" id="home">
                 <div class="swiper home-swiper">
                     <div class="swiper-wrapper">
@@ -91,15 +159,16 @@
                                     <p class="home__description">Это Никита, он же Гиш, простой добрый парень. Кстати, он ездил в горы. Возможно, скоро он станет гастарбайтером в Польше. Но это неточно.</p>
 
                                     <div class="home__buttons">
-                                        <a href="#" class="button">Узнать подробнее</a> 
-                                        <a href="#" class="button--link button--flex">Посмотреть статистику
+                                        <a href="#" class="button">Узнать подробнее</a>
+                                        
+                                        <a href="#popup2" class="button--link button--flex">Посмотреть статистику
                                             <i class='bx bx-right-arrow-alt button__icon' ></i>
                                         </a>   
                                     </div>
                                 </div>
                             </div>
                         </section>
-
+                                               
                         <section class="swiper-slide">
                             <div class="home__content grid">
                                 <div class="home__group">
@@ -209,6 +278,8 @@
                         </section>
                     </div>
 
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </section>
@@ -244,12 +315,48 @@
                     <div class="about__data">
                         <h2 class="section__title about__title">О проекте</h2>
                         <p class="about__description">Мы - дружный коллектив друзей и товарищей, которые на протяжении долгого времени собираются вместе, чтобы прекрасно провести время за кужкой пива и настольными играми. В связи с этим, мы решили запустить отдельный ресурс, где бы можно было трекать наши успехи, а так же вести статистику.</p>
-                        <a href="calendar/index.html" class="button">Узнать больше</a>
+                        <a href="#popup" class="button">Календарь событий</a>
                     </div>
 
                     <img src="assets/img/about-img.png" alt="" class="about__img">
                 </div>
             </section>
+
+            <div class="popup" id="popup">                                                 <!--==================== Поп-ап ====================-->
+                <a href="#header" class="popup__area"></a>
+                <div class="popup__body">                                                  <!--==================== Тело ====================-->
+                    <div class="popup__content">                                           <!--==================== Контент ====================-->
+                        <a href="#header" class="popup__close">X</a>                              <!--==================== Закрывающая кнопка ====================-->
+                        <div class="popup__title">Календарь</div>
+                        <section class="calc">
+                            <div class="box1">
+                                <div class="container1">
+                                    <div id="dycalendar"></div>
+                                </div>
+                            </div>
+                        </section>
+                        <script src="calendar/dycalendar.js"></script>
+                        <script>
+                            dycalendar.draw({
+                                target: '#dycalendar',
+                                type: 'month',
+                                dayformat: 'full',
+                                monthformat: 'full',
+                                highlighttargetdate: true,
+                                prevnextbutton: 'show',
+                    
+                            })
+                        </script>
+                        <script type="text/javascript" src="calendar/vanilla-tilt.js"></script>
+                        <script type="text/javascript">
+                        VanillaTilt.init(document.querySelector(".container1"), {
+                            max: 10,
+                            speed: 100
+                        });
+                        </script>
+                    </div>
+                </div>
+            </div>
 
             <!--==================== TRICK OR TREAT ====================-->
             <section class="section trick" id="trick">
@@ -607,6 +714,9 @@
             </div>
 
             <span class="footer__copy">&#169; Thars1s, Все права защищены</span>
+
+            <img src="assets/img/footer1-img.png" alt="" class="footer__img-one">
+            <img src="assets/img/footer2-img.png" alt="" class="footer__img-two">
 
             <div class="waves">
                 <div class="wave" id="wave1"></div>
