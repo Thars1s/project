@@ -277,7 +277,6 @@ button{
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .night::before{
@@ -321,6 +320,7 @@ button{
 #home{
   position: relative;
   padding: 100px 24px;
+  background-color: var(--body-color);
 }
 .home__content {
   row-gap: 1rem;
