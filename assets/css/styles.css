@@ -269,11 +269,6 @@ button{
 }
 
 /*=============== HOME ===============*/
-.first{
-  text-decoration: line-through;
-  text-decoration-thickness: 20%;
-  text-decoration-color: red;
-}
 .night{
   position: relative;
   width: 100%;
@@ -326,8 +321,6 @@ button{
 #home{
   position: relative;
   padding: 100px 24px;
-  background-color: var(--body-color);
-  overflow: hidden;
 }
 .home__content {
   row-gap: 1rem;
