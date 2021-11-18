@@ -34,6 +34,10 @@ let homeSwiper = new Swiper(".home-swiper", {
     spaceBetween: 30,
     loop: 'true',
 
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true  /*=============== Кликабельный слайдер ===============*/
@@ -101,14 +105,27 @@ sr.reveal('.about__img, .discount__data', {origin: 'right'})
 // Параллакс ночного Фона
 let stars = document.getElementById('stars');
 let moon = document.getElementById('moon');
-let mountains_behind = document.getElementById('mountains_behind');
 let text = document.getElementById('text_fly');
 
 window.addEventListener('scroll', function(){
     let value = window.scrollY;
     stars.style.left = value * 0.25 + 'px';
     moon.style.top = value * 1.05 + 'px';
-    mountains_behind.style.top = value * 0.4 + 'px';
-    text.style.marginRight = value * 4 + 'px';
+    text.style.marginRight = value * 1.2 + 'px';
     text.style.marginTop = value * 1.2 + 'px';
 }) 
+
+const mediaQuery = window.matchMedia('(min-width: 767px)')
+function handleTabletChange(e) {
+  if (e.matches) {
+    window.addEventListener('scroll', function(){
+        let value = window.scrollY;
+        stars.style.left = value * 0.25 + 'px';
+        moon.style.top = value * 1.05 + 'px';
+        text.style.marginRight = value * 3 + 'px';
+        text.style.marginTop = value * 1.2 + 'px';
+    }) 
+  }
+}
+mediaQuery.addListener(handleTabletChange)
+handleTabletChange(mediaQuery)
