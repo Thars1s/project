@@ -615,6 +615,7 @@ button{
   z-index: 1001;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 /*таргет, при нажатии что происходит с родительским дивом*/
@@ -629,6 +630,8 @@ button{
 }
 
 .popup2__area {
+  display: flex;
+  flex-wrap: wrap;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -637,21 +640,26 @@ button{
 }
 
 .popup2__body{
-  min-height: 100%;
+  height: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 30px 10px;
-  transition: all 0.8s ease 0s;
+  transition: all 0.2s ease 0s;
 }
 
 .popup2__content{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: auto;
+  height: auto;
   background-color: hsl(104, 28%, 40%);
   color: var(--title-color);
-  width: 500px;
-  padding: 20px;
+  padding: 10px;
   position: relative;
-  transition: all 0.8s ease 0s;
+  transition: all 0.2s ease 0s;
   opacity: 0;
   transform: translate(100%, 0);
   border-radius: 20px;
@@ -671,111 +679,192 @@ button{
 }
 
 .popup2__title{
-  font-size: 1.5rem;
+  font-size: 20px;
   margin: 0 0 1em 0;
   font-weight: 600;
 }
 
 .info{
-  display: grid;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: auto;
-  grid-template-columns: repeat(1, 250px 100px);
-  grid-gap: 1rem;
-  justify-items: start;
+  gap: .5rem;
 }
 
 /*ОСНОВНОЙ БЛОК*/
 .popup2__text, .wrapper{
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #ced4da;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 /*ДОЧЕРНИЕ БЛОКИ ОТДЕЛЬНО С ТУЛТИПОМ+ИКОНКОЙ*/
-.popup2 .popup2__body .popup2__content .wrapper .icon{
-    position: relative;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    cursor: pointer;
+.wrapper .icon{
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;    
 }
 
-/*БЛОК СПАН КРУГ*/
-.popup2 .popup2__body .popup2__content .wrapper .icon span{
-    position: relative;
-    display: block;
-    text-align: center; /*ЦЕНТРОВКА ИКОН*/
-    transition: all .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-/*ИКОНКА*/
-.popup2 .popup2__body .popup2__content .wrapper .icon span i{
-    font-size: 16px;
-}
-
-/*ХОВЕР НА БЛОК СПАН*/
-.popup2 .popup2__body .popup2__content .wrapper .icon:hover span{
-    color: #fff;
-}
-
-/*ТУЛТИП*/
-.popup2 .popup2__body .popup2__content .wrapper .icon .tooltip{
-    position: absolute;
-    width: 250px;
-    height: auto;
-    right: -400px;
-    background: #fff;
-    color: #fff;
-    font-size: var(--normal-font-size);
-    padding: 10px 18px;
-    border-radius: 25px;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-    /*отключение отображения блока в дефолте*/
-    opacity: 0;
-    pointer-events: none;
-    transition: all .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: 0;
-}
-
-.popup2__text{
-  font-size: var(--normal-font-size);
+/*ТУЛТИП КОЛИЧЕСТВА ИГР*/
+.wrapper .icon .tooltip__all{
+  position: absolute;
+  width: 190px;
+  height: auto;
+  top: 400px;
+  right: -70px;
+  font-size: 14px;
+  padding: 5px 0px 5px 10px;
+  border-radius: 25px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 0;
 }
 
 /*ХОВЕР НА ИКОНКУ, ПРИ ЭТОМ МЕНЯЕМ БЛОК ТУЛТИП*/
-.popup2 .popup2__body .popup2__content .wrapper .icon:hover .tooltip{
-    right: -280px;
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 1;
+.wrapper .icon:hover .tooltip__all{
+  right: -70px;
+  top: -360px;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
 }
 
 /*ТРЕУГОЛЬНИК У ТУЛТИПА*/
-.popup2 .popup2__body .popup2__content .wrapper .icon .tooltip::before{
-    position: absolute;
-    content: "";
-    width: 15px;
-    height: 15px;
-    background: #fff;
-    bottom: 50%;
-    left: -8px;
-    transition: all .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+.wrapper .icon .tooltip__all::before{
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  left: 40%;
+  bottom: -8px;
+  transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 /*чистое позиционирование на середину блока при помощи связки left 50% + translate -50%*/
-    transform: translateY(50%) rotate(45deg); 
+    transform: translateX(50%) rotate(45deg); 
 }
 
-.popup2 .popup2__body .popup2__content .wrapper .icon:hover span,
-.popup2 .popup2__body .popup2__content .wrapper .icon:hover .tooltip{
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip__all{
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 }
 
 /*ХОВЕРЫ НА ИКОНКИ ОТДЕЛЬНО*/
-.popup2 .popup2__body .popup2__content .wrapper .facebook:hover span,
-.popup2 .popup2__body .popup2__content .wrapper .facebook:hover .tooltip,
-.popup2 .popup2__body .popup2__content .wrapper .facebook:hover .tooltip::before{
-    background: #3b5999;
+.wrapper .facebook:hover span,
+.wrapper .facebook:hover .tooltip__all,
+.wrapper .facebook:hover .tooltip__all::before{
+  background: #3b5999;
+}
+
+/*ТУЛЛТИП ПОБЕД*/
+.wrapper .icon .tooltip__win{
+  position: absolute;
+  width: 190px;
+  height: auto;
+  right: -70px;
+  top: 400px;
+  font-size: 14px;
+  padding: 5px 0px 5px 10px;
+  border-radius: 25px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 0;
+}
+
+/*ХОВЕР НА ИКОНКУ, ПРИ ЭТОМ МЕНЯЕМ БЛОК ТУЛТИП*/
+.wrapper .icon:hover .tooltip__win{
+  right: -70px;
+  top: -150px;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/*ТРЕУГОЛЬНИК У ТУЛТИПА*/
+.wrapper .icon .tooltip__win::before{
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  left: 40%;
+  bottom: -8px;
+  transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+/*чистое позиционирование на середину блока при помощи связки left 50% + translate -50%*/
+  transform: translateX(50%) rotate(45deg); 
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip__win{
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+}
+
+/*ХОВЕРЫ НА ИКОНКИ ОТДЕЛЬНО*/
+.wrapper .facebook:hover span,
+.wrapper .facebook:hover .tooltip__win,
+.wrapper .facebook:hover .tooltip__win::before{
+  background: #3b5999;
+}
+
+/*ТУЛЛТИП ТОП*/
+.wrapper .icon .tooltip__top{
+  position: absolute;
+  width: 190px;
+  height: auto;
+  right: -70px;
+  top: 400px;
+  font-size: 14px;
+  padding: 5px 0px 5px 10px;
+  border-radius: 25px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 0;
+}
+
+/*ХОВЕР НА ИКОНКУ, ПРИ ЭТОМ МЕНЯЕМ БЛОК ТУЛТИП*/
+.wrapper .icon:hover .tooltip__top{
+  right: -70px;
+  top: -195px;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/*ТРЕУГОЛЬНИК У ТУЛТИПА*/
+.wrapper .icon .tooltip__top::before{
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  left: 40%;
+  bottom: -8px;
+  transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+/*чистое позиционирование на середину блока при помощи связки left 50% + translate -50%*/
+  transform: translateX(50%) rotate(45deg); 
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip__top{
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+}
+
+/*ХОВЕРЫ НА ИКОНКИ ОТДЕЛЬНО*/
+.wrapper .facebook:hover span,
+.wrapper .facebook:hover .tooltip__top,
+.wrapper .facebook:hover .tooltip__top::before{
+  background: #3b5999;
 }
 
 /*=============== ИГРЫ В КОТОРЫЕ МЫ ИГРАЕМ ===============*/
@@ -1239,6 +1328,7 @@ footer .wave {
   }
 
   #text_fly{
+    right: -470px;
     font-size: 5rem;
   }
 
@@ -1298,6 +1388,29 @@ footer .wave {
   #text_fly{
     right: -470px;
   }
+
+  .info{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 250px 100px);
+    grid-gap: 1rem;
+    justify-items: start;
+    align-items: start;
+    width: auto;
+  }
+
+  .wrapper .icon{
+    margin-bottom: 0;
+  }
+
+  .popup2__text, .wrapper{
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 16px;
+    border-bottom: 1px solid #ced4da;
+  }
+
 }
 
 @media screen and (min-width: 767px){
@@ -1544,6 +1657,41 @@ footer .wave {
     padding: 0;
     margin: 0;
   }
+
+  /*ХОВЕР НА ИКОНКУ, ПРИ ЭТОМ МЕНЯЕМ БЛОК ТУЛТИП*/
+  .wrapper .icon:hover .tooltip{
+  right: -280px;
+  top: -165px;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+  }
+
+  /*ТРЕУГОЛЬНИК У ТУЛТИПА*/
+  .wrapper .icon .tooltip::before{
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  bottom: 50%;
+  left: -8px;
+  transition: all .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /*чистое позиционирование на середину блока при помощи связки left 50% + translate -50%*/
+  transform: translateY(50%) rotate(45deg); 
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip{
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+  }
+
+  /*ХОВЕРЫ НА ИКОНКИ ОТДЕЛЬНО*/
+  .wrapper .facebook:hover span,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before{
+  background: #3b5999;
+  }
+
 }
 
 /*Календарь*/
