@@ -588,13 +588,14 @@ button{
   color: #fff;
 }
 
-.popup__title{
+.popup__title,{
   font-size: 40px;
   margin: 0 0 1em 0;
 }
 /*---------------------------------------------------------------*/
 
-.popup2{
+.popup2,
+.popupPakha{
   position: fixed;
   width: 100%;
   height: 100%;
@@ -610,17 +611,20 @@ button{
 }
 
 /*таргет, при нажатии что происходит с родительским дивом*/
-.popup2:target {        
+.popup2:target,
+.popupPakha:target {        
   opacity: 1;
   visibility: visible;
 }
 
-.popup2:target .popup2__content{
+.popup2:target .popup2__content,
+.popupPakha:target .popupPakha__content{
   transform: translate(0px, 0px);
   opacity: 1;
 }
 
-.popup2__area {
+.popup2__area,
+.popupPakha__area {
   display: flex;
   flex-wrap: wrap;
   position: absolute;
@@ -630,7 +634,8 @@ button{
   left: 0;
 }
 
-.popup2__body{
+.popup2__body,
+.popupPakha__body{
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -640,13 +645,14 @@ button{
   transition: all 0.2s ease 0s;
 }
 
-.popup2__content{
+.popup2__content,
+.popupPakha__content{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   width: auto;
   height: auto;
-  background-color: hsl(104, 28%, 40%);
+  background-color: hsl(215, 69%, 70%);
   color: var(--title-color);
   padding: 10px;
   position: relative;
@@ -656,11 +662,18 @@ button{
   border-radius: 20px;
   line-height: var(--mb-1-5)
 }
-.popup2__content img{
+
+.popupPakha__content{
+  background-color: hsl(0, 57%, 56%);
+}
+
+.popup2__content img,
+.popupPakha__content img{
   width: 120px;
 }
 
-.popup2__close{
+.popup2__close,
+.popupPakha__close{
   position: absolute;
   right: 15px;
   top: 15px;
@@ -669,7 +682,8 @@ button{
   color: #fff;
 }
 
-.popup2__title{
+.popup2__title,
+.popupPakha__title{
   font-size: 20px;
   margin: 0 0 1em 0;
   font-weight: 600;
@@ -687,7 +701,7 @@ button{
 }
 
 /*ОСНОВНОЙ БЛОК*/
-.popup2__text, .wrapper{
+.popup2__text, .popupPakha__text, .wrapper{
   margin: 0;
   padding: 0;
   font-weight: 500;
