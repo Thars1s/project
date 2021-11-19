@@ -746,7 +746,10 @@ button{
 }
 
 /*ТУЛТИП КОЛИЧЕСТВА ИГР*/
-.wrapper .icon .tooltip__all{
+.wrapper .icon .tooltip__all,
+.wrapper .icon .tooltip__allPakha,
+.wrapper .icon .tooltip__allSlavin,
+.wrapper .icon .tooltip__allCarpet{
   position: absolute;
   width: 190px;
   height: auto;
@@ -763,7 +766,10 @@ button{
 }
 
 /*ХОВЕР НА ИКОНКУ, ПРИ ЭТОМ МЕНЯЕМ БЛОК ТУЛТИП*/
-.wrapper .icon:hover .tooltip__all{
+.wrapper .icon:hover .tooltip__all,
+.wrapper .icon:hover .tooltip__allPakha,
+.wrapper .icon:hover .tooltip__allSlavin,
+.wrapper .icon:hover .tooltip__allCarpet{
   right: -70px;
   top: -360px;
   opacity: 1;
@@ -771,8 +777,20 @@ button{
   z-index: 1;
 }
 
+.wrapper .icon:hover .tooltip__allPakha{
+  top: -340px;
+}
+
+.wrapper .icon:hover .tooltip__allSlavin,
+.wrapper .icon:hover .tooltip__allCarpet{
+  top: -270px;
+}
+
 /*ТРЕУГОЛЬНИК У ТУЛТИПА*/
-.wrapper .icon .tooltip__all::before{
+.wrapper .icon .tooltip__all::before,
+.wrapper .icon .tooltip__allPakha::before,
+.wrapper .icon .tooltip__allSlavin::before,
+.wrapper .icon .tooltip__allCarpet::before{
   position: absolute;
   content: "";
   width: 15px;
@@ -785,19 +803,31 @@ button{
 }
 
 .wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip__all{
+.wrapper .icon:hover .tooltip__all,
+.wrapper .icon:hover .tooltip__allPakha,
+.wrapper .icon:hover .tooltip__allSlavin,
+.wrapper .icon:hover .tooltip__allCarpet{
   text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 }
 
 /*ХОВЕРЫ НА ИКОНКИ ОТДЕЛЬНО*/
 .wrapper .facebook:hover span,
 .wrapper .facebook:hover .tooltip__all,
-.wrapper .facebook:hover .tooltip__all::before{
-  background: #3b5999;
+.wrapper .facebook:hover .tooltip__allPakha,
+.wrapper .facebook:hover .tooltip__allSlavin,
+.wrapper .facebook:hover .tooltip__allCarpet,
+.wrapper .facebook:hover .tooltip__all::before,
+.wrapper .facebook:hover .tooltip__allPakha::before,
+.wrapper .facebook:hover .tooltip__allSlavin::before,
+.wrapper .facebook:hover .tooltip__allCarpet::before{
+  background: #357a4a;
 }
 
 /*ТУЛЛТИП ПОБЕД*/
-.wrapper .icon .tooltip__win{
+.wrapper .icon .tooltip__win,
+.wrapper .icon .tooltip__winPakha,
+.wrapper .icon .tooltip__winSlavin,
+.wrapper .icon .tooltip__winCarpet{
   position: absolute;
   width: 190px;
   height: auto;
@@ -814,7 +844,10 @@ button{
 }
 
 /*ХОВЕР НА ИКОНКУ, ПРИ ЭТОМ МЕНЯЕМ БЛОК ТУЛТИП*/
-.wrapper .icon:hover .tooltip__win{
+.wrapper .icon:hover .tooltip__win,
+.wrapper .icon:hover .tooltip__winPakha,
+.wrapper .icon:hover .tooltip__winSlavin,
+.wrapper .icon:hover .tooltip__winCarpet{
   right: -70px;
   top: -150px;
   opacity: 1;
@@ -822,8 +855,23 @@ button{
   z-index: 1;
 }
 
+.wrapper .icon:hover .tooltip__winPakha{
+  top: -95px;
+}
+
+.wrapper .icon:hover .tooltip__winSlavin{
+  top: -55px;
+}
+
+.wrapper .icon:hover .tooltip__winCarpet{
+  top: -70px;
+}
+
 /*ТРЕУГОЛЬНИК У ТУЛТИПА*/
-.wrapper .icon .tooltip__win::before{
+.wrapper .icon .tooltip__win::before,
+.wrapper .icon .tooltip__winPakha::before,
+.wrapper .icon .tooltip__winSlavin::before,
+.wrapper .icon .tooltip__winCarpet::before{
   position: absolute;
   content: "";
   width: 15px;
@@ -836,19 +884,31 @@ button{
 }
 
 .wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip__win{
+.wrapper .icon:hover .tooltip__win,
+.wrapper .icon:hover .tooltip__winPakha,
+.wrapper .icon:hover .tooltip__winSlavin,
+.wrapper .icon:hover .tooltip__winCarpet{
   text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 }
 
 /*ХОВЕРЫ НА ИКОНКИ ОТДЕЛЬНО*/
 .wrapper .facebook:hover span,
 .wrapper .facebook:hover .tooltip__win,
-.wrapper .facebook:hover .tooltip__win::before{
-  background: #3b5999;
+.wrapper .facebook:hover .tooltip__winPakha,
+.wrapper .facebook:hover .tooltip__winSlavin,
+.wrapper .facebook:hover .tooltip__winCarpet,
+.wrapper .facebook:hover .tooltip__win::before,
+.wrapper .facebook:hover .tooltip__winPakha::before,
+.wrapper .facebook:hover .tooltip__winSlavin::before,
+.wrapper .facebook:hover .tooltip__winCarpet::before{
+  background: #357a4a;
 }
 
 /*ТУЛЛТИП ТОП*/
-.wrapper .icon .tooltip__top{
+.wrapper .icon .tooltip__top,
+.wrapper .icon .tooltip__topPakha,
+.wrapper .icon .tooltip__topSlavin,
+.wrapper .icon .tooltip__topCarpet{
   position: absolute;
   width: 190px;
   height: auto;
@@ -865,7 +925,10 @@ button{
 }
 
 /*ХОВЕР НА ИКОНКУ, ПРИ ЭТОМ МЕНЯЕМ БЛОК ТУЛТИП*/
-.wrapper .icon:hover .tooltip__top{
+.wrapper .icon:hover .tooltip__top,
+.wrapper .icon:hover .tooltip__topPakha,
+.wrapper .icon:hover .tooltip__topSlavin,
+.wrapper .icon:hover .tooltip__topCarpet{
   right: -70px;
   top: -195px;
   opacity: 1;
@@ -873,8 +936,23 @@ button{
   z-index: 1;
 }
 
+.wrapper .icon:hover .tooltip__topPakha{
+  top: -145px;
+}
+
+.wrapper .icon:hover .tooltip__topSlavin{
+  top: -100px;
+}
+
+.wrapper .icon:hover .tooltip__topCarpet{
+  top: -175px;
+}
+
 /*ТРЕУГОЛЬНИК У ТУЛТИПА*/
-.wrapper .icon .tooltip__top::before{
+.wrapper .icon .tooltip__top::before,
+.wrapper .icon .tooltip__topPakha::before,
+.wrapper .icon .tooltip__topSlavin::before,
+.wrapper .icon .tooltip__topCarpet::before{
   position: absolute;
   content: "";
   width: 15px;
@@ -887,15 +965,24 @@ button{
 }
 
 .wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip__top{
+.wrapper .icon:hover .tooltip__top,
+.wrapper .icon:hover .tooltip__topPakha,
+.wrapper .icon:hover .tooltip__topSlavin,
+.wrapper .icon:hover .tooltip__topCarpet{
   text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 }
 
 /*ХОВЕРЫ НА ИКОНКИ ОТДЕЛЬНО*/
 .wrapper .facebook:hover span,
 .wrapper .facebook:hover .tooltip__top,
-.wrapper .facebook:hover .tooltip__top::before{
-  background: #3b5999;
+.wrapper .facebook:hover .tooltip__topPakha,
+.wrapper .facebook:hover .tooltip__topSlavin,
+.wrapper .facebook:hover .tooltip__topCarpet,
+.wrapper .facebook:hover .tooltip__top::before,
+.wrapper .facebook:hover .tooltip__topPakha::before,
+.wrapper .facebook:hover .tooltip__topSlavin::before,
+.wrapper .facebook:hover .tooltip__topCarpet::before{
+  background: #357a4a;
 }
 
 /*=============== ИГРЫ В КОТОРЫЕ МЫ ИГРАЕМ ===============*/
